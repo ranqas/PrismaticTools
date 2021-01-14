@@ -1,20 +1,20 @@
 ﻿
-namespace PrismaticTools.Framework {
+namespace PaladyumTools.Framework {
     public class ModConfig {
         public bool UseSprinklersAsScarecrows { get; set; }
         public bool UseSprinklersAsLamps { get; set; }
         public int SprinklerRange { get; set; }
-        public int PrismaticToolLength { get; set; }
-        public int PrismaticToolWidth { get; set; }
-        public int PrismaticToolCost { get; set; }
+        public int PaladyumToolLength { get; set; }
+        public int PaladyumToolWidth { get; set; }
+        public int PaladyumToolCost { get; set; }
 
         public ModConfig() {
             UseSprinklersAsScarecrows = true;
             UseSprinklersAsLamps = true;
-            SprinklerRange = 3;
-            PrismaticToolLength = 7;
-            PrismaticToolWidth = 2;
-            PrismaticToolCost = 100000;
+            SprinklerRange = 4;
+            PaladyumToolLength = 9;
+            PaladyumToolWidth = 4;
+            PaladyumToolCost = 300000;
         }
     }
 }
