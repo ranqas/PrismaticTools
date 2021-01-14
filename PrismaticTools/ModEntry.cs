@@ -7,13 +7,13 @@ using StardewValley;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
 
-using PrismaticTools.Framework;
+using PaladyumTools.Framework;
 using System.Collections.Generic;
 using StardewValley.Objects;
 using StardewValley.Locations;
 using StardewValley.Tools;
 
-namespace PrismaticTools {
+namespace PaladyumTools {
 
     public class ModEntry : Mod {
 
@@ -45,7 +45,7 @@ namespace PrismaticTools {
 
             InitColors();
 
-            var harmony = HarmonyInstance.Create("stokastic.PrismaticTools");
+            var harmony = HarmonyInstance.Create("stokastic.PaladyumTools");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
         }
 
@@ -58,7 +58,7 @@ namespace PrismaticTools {
                 return;
             }
 
-            if (item == null || !(item is Object) || !((item as Object).ParentSheetIndex == PrismaticBarItem.INDEX)) {
+            if (item == null || !(item is Object) || !((item as Object).ParentSheetIndex == PaladyumBarItem.INDEX)) {
                 return;
             }
 
@@ -71,7 +71,7 @@ namespace PrismaticTools {
         }
 
         public override object GetApi() {
-            return new PrismaticAPI();
+            return new PaladyumAPI();
         }
 
         private void UpgradeTools(string command, string[] args) {
@@ -89,9 +89,9 @@ namespace PrismaticTools {
             }
             foreach (Item item in Game1.player.Items) {
                 if (item is Object) {
-                    if (item.ParentSheetIndex == PrismaticSprinklerItem.INDEX) {
+                    if (item.ParentSheetIndex == PaladyumSprinklerItem.INDEX) {
                         (item as Object).lightSource = new LightSource(LightSource.cauldronLight, new Vector2(0, 0), 2.0f, new Color(0.0f, 0.0f, 0.0f));
-                    } else if (item.ParentSheetIndex == PrismaticBarItem.INDEX) {
+                    } else if (item.ParentSheetIndex == PaladyumBarItem.INDEX) {
                         (item as Object).lightSource = new LightSource(LightSource.cauldronLight, new Vector2(0, 0), 1.0f, colors[colorCycleIndex]);
                     }
                 }
@@ -104,9 +104,9 @@ namespace PrismaticTools {
 
         private void SaveEvents_AfterLoad(object sender, System.EventArgs e) {
             // force add sprinkler recipe for people who were level 10 before installing mod
-            if (Game1.player.FarmingLevel >= PrismaticSprinklerItem.CRAFTING_LEVEL) {
+            if (Game1.player.FarmingLevel >= PaladyumSprinklerItem.CRAFTING_LEVEL) {
                 try {
-                    Game1.player.craftingRecipes.Add("Prismatic Sprinkler", 0);
+                    Game1.player.craftingRecipes.Add("Paladyum Sprinkler", 0);
                 } catch { }
             }
 
@@ -125,7 +125,7 @@ namespace PrismaticTools {
                             if (item == null) {
                                 continue;
                             }
-                            if (item.Name.Contains("Prismatic")) {
+                            if (item.Name.Contains("Paladyum")) {
                                 SwapIndex(item);
                             }
                         }
@@ -139,7 +139,7 @@ namespace PrismaticTools {
 
                     if (obj is Chest) {
                         foreach (Item item in (obj as Chest).items) {
-                            if (item.Name.Contains("Prismatic")) {
+                            if (item.Name.Contains("Paladyum")) {
                                 SwapIndex(item);
                             }
                         }
@@ -149,14 +149,14 @@ namespace PrismaticTools {
                         if (obj.heldObject.Value != null) {
                             SwapIndex((obj.heldObject.Value));
                         }
-                    } else if (obj.ParentSheetIndex == PrismaticBarItem.OLD_INDEX || obj.ParentSheetIndex == PrismaticSprinklerItem.OLD_INDEX) {
+                    } else if (obj.ParentSheetIndex == PaladyumBarItem.OLD_INDEX || obj.ParentSheetIndex == PaladyumSprinklerItem.OLD_INDEX) {
                         SwapIndex(obj);
                     }
                 }
             }
 
             foreach (Item item in Game1.player.Items) {
-                if (item != null && item.Name.Contains("Prismatic")) {
+                if (item != null && item.Name.Contains("Paladyum")) {
                     SwapIndex(item);
                 }
             }
@@ -165,11 +165,11 @@ namespace PrismaticTools {
         }
 
         private void SwapIndex(Item item) {
-            if (item.ParentSheetIndex == PrismaticBarItem.OLD_INDEX) {
-                item.ParentSheetIndex = PrismaticBarItem.INDEX;
+            if (item.ParentSheetIndex == PaladyumBarItem.OLD_INDEX) {
+                item.ParentSheetIndex = PaladyumBarItem.INDEX;
             }
-            if (item.ParentSheetIndex == PrismaticSprinklerItem.OLD_INDEX) {
-                item.ParentSheetIndex = PrismaticSprinklerItem.INDEX;
+            if (item.ParentSheetIndex == PaladyumSprinklerItem.OLD_INDEX) {
+                item.ParentSheetIndex = PaladyumSprinklerItem.INDEX;
             }
         }
 
