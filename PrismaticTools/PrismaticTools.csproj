@@ -7,8 +7,8 @@
     <ProjectGuid>{C24166EE-9341-4760-86B3-F89B326F3FC0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PrismaticTools</RootNamespace>
-    <AssemblyName>PrismaticTools</AssemblyName>
+    <RootNamespace>PaladyumTools</RootNamespace>
+    <AssemblyName>PaladyumTools</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -70,8 +70,8 @@
     <Compile Include="Framework\AssetEditor.cs" />
     <Compile Include="Framework\Blacksmith.cs" />
     <Compile Include="Framework\Furnace.cs" />
-    <Compile Include="Framework\PrismaticAPI.cs" />
-    <Compile Include="Framework\PrismaticItems.cs" />
+    <Compile Include="Framework\PaladyumAPI.cs" />
+    <Compile Include="Framework\PaladyumItems.cs" />
     <Compile Include="Framework\Sprinkler.cs" />
     <Compile Include="Framework\Tools.cs" />
     <Compile Include="ModConfig.cs" />
@@ -95,13 +95,13 @@
     <Analyzer Include="..\packages\Pathoschild.Stardew.ModBuildConfig.2.1.0-beta-20180428\analyzers\dotnet\cs\StardewModdingAPI.ModBuildConfig.Analyzer.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\prismaticBar.png">
+    <Content Include="Assets\PaladyumBar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\prismaticSprinkler.png">
+    <Content Include="Assets\PaladyumSprinkler.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\prismaticTools.png">
+    <Content Include="Assets\PaladyumTools.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\tools.png">
