@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismaticTools", "PrismaticTools\PrismaticTools.csproj", "{C24166EE-9341-4760-86B3-F89B326F3FC0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaladyumTools", "PaladyumTools\PaladyumTools.csproj", "{C24166EE-9341-4760-86B3-F89B326F3FC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
